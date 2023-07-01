@@ -636,13 +636,13 @@
 		"compilationTarget": {
 			"contracts/SocialAuthentication.sol": "SocialAuthentication"
 		},
-		"evmVersion": "london",
+		"evmVersion": "paris",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
 		},
 		"optimizer": {
-			"enabled": true,
+			"enabled": false,
 			"runs": 200
 		},
 		"remappings": []
@@ -761,11 +761,11 @@
 			]
 		},
 		"contracts/SocialAuthentication.sol": {
-			"keccak256": "0xcefb0d5fbeb47ac49cf3f595b6e994f7f1f48c4c695bc95b69b72c64fca675cd",
+			"keccak256": "0x4bc26e63af7c2b8497c67d4324f1f8bb3052092cba5fad37f7628ff047096f64",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://4a0b7eb0d44db81b459c4b6fd097564ab3f3daa398affef42c2df023035d69eb",
-				"dweb:/ipfs/QmabCTBz7ZBwtwgHoiDeZBcyhBVbVaRnXpQam4QKhynwHW"
+				"bzz-raw://fdd2138f38eca47050bef7a0fb2382ad66afdf9bb7937e5282869070f0e9c06e",
+				"dweb:/ipfs/QmNiwFytWtb7cbCsFkEAWeVRZNAuRqsFNvMUPNzUuN2F7e"
 			]
 		}
 	},

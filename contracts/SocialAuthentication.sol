@@ -46,7 +46,9 @@ contract SocialAuthentication is ERC721, Pausable, Ownable, ERC721Burnable {
     }
 
     function unregister(address to) public onlyOwner {
-        this.burn(identities[to].tokenId);
+        lock = false;
+        super._burn(identities[to].tokenId);
+        lock = true;
         identities[to].name = "";
         identities[to].surname = "";
         identities[to].tokenId = 0;

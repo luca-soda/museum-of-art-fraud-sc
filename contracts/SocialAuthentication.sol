@@ -10,8 +10,8 @@ contract SocialAuthentication is ERC721, Pausable, Ownable, ERC721Burnable {
     constructor() ERC721("SocialAuthentication", "SA") {}
     struct Identity {
         string name;
-        string surname;
         uint256 tokenId;
+        string hashVc;
     }
 
     mapping(address => Identity) identities;
@@ -31,14 +31,14 @@ contract SocialAuthentication is ERC721, Pausable, Ownable, ERC721Burnable {
         _safeMint(to, tokenId);
     }
 
-    function register(address to, string calldata name, string calldata surname) public onlyOwner {
+    function register(address to, string calldata name, string calldata hashVc) public onlyOwner {
         counter = counter+1;
         require(bytes(identities[to].name).length == 0, "You already have an identity associated with that address");
-        require(bytes(name).length != 0 && bytes(surname).length != 0, "Name or surname can't be empty");
+        require(bytes(name).length != 0 && bytes(hashVc).length != 0, "Name or hash can't be empty");
         identities[to] = Identity({
             name: name,
-            surname: surname,
-            tokenId: counter
+            tokenId: counter,
+            hashVc: hashVc
         });
         lock = false;
         safeMint(to, counter);
@@ -50,7 +50,7 @@ contract SocialAuthentication is ERC721, Pausable, Ownable, ERC721Burnable {
         super._burn(identities[to].tokenId);
         lock = true;
         identities[to].name = "";
-        identities[to].surname = "";
+        identities[to].hashVc = "";
         identities[to].tokenId = 0;
     }
 
